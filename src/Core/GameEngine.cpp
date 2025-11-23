@@ -4,7 +4,6 @@
 #include <sstream>
 #include "Core/Logger.h"
 
-#define SDL_RenderDrawLine SDL_RenderDrawLine_renamed_SDL_RenderLine
 
 
 namespace Ecosystem {
@@ -165,21 +164,21 @@ namespace Ecosystem {
             // Grid color (semi-dark)
             SDL_SetRenderDrawColor(renderer, 80, 80, 80, 120);
             for (int x = 0; x <= w; x += spacing) {
-                SDL_RenderDrawLine(renderer, x, 0, x, h);
+                SDL_RenderLine(renderer, x, 0, x, h);
             }
             for (int y = 0; y <= h; y += spacing) {
-                SDL_RenderDrawLine(renderer, 0, y, w, y);
+                SDL_RenderLine(renderer, 0, y, w, y);
             }
 
             // Draw origin cross (top-left)
             SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-            SDL_RenderDrawLine(renderer, 0, 0, 10, 0);
-            SDL_RenderDrawLine(renderer, 0, 0, 0, 10);
+            SDL_RenderLine(renderer, 0, 0, 10, 0);
+            SDL_RenderLine(renderer, 0, 0, 0, 10);
 
             // Draw center cross
             SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-            SDL_RenderDrawLine(renderer, w/2 - 10, h/2, w/2 + 10, h/2);
-            SDL_RenderDrawLine(renderer, w/2, h/2 - 10, w/2, h/2 + 10);
+            SDL_RenderLine(renderer, w/2 - 10, h/2, w/2 + 10, h/2);
+            SDL_RenderLine(renderer, w/2, h/2 - 10, w/2, h/2 + 10);
         }
 
     } // namespace Core
