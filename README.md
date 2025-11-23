@@ -8,6 +8,8 @@ Simulation d'écosystème en C++ avec SDL3 mettant en oeuvre la POO avancée.
 
 ```bash
 # Avec g++
-g++ -std=c++17 -Iinclude -o ecosystem src/*.cpp src/Core/*.cpp src/Graphics/*.cpp -
+mkdir -p bin
+g++ -std=c++17 -O2 -Iinclude src/main.cpp src/Core/*.cpp src/Graphics/*.cpp -lSDL3 -o bin/ecosystem.exeGraphics/*.cpp -
 # Avec clang++
-clang++ -std=c++17 -Iinclude -o ecosystem src/*.cpp src/Core/*.cpp src/Graphics/*.cpp
+mkdir -p bin
+clang++ -std=c++17 -O2 -Iinclude src/main.cpp src/Core/*.cpp src/Graphics/*.cpp -lSDL3 -o bin/ecosystem.exe
